@@ -1,0 +1,162 @@
+:root {
+  /* Layout breakpoints */
+  --breakpoint-mobile: 375px;
+  --breakpoint-desktop: 1440px;
+
+  /* Primary Colors */
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+
+  /* Neutral Colors */
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+
+  /* Typography */
+  --font-body-size: 13px;
+  --font-family-base: "Barlow Semi Condensed", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-body-size);
+  background-color: var(--grey-100);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main_container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  line-height: 0;
+}
+
+.profile-img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.student-info h2 {
+  font-weight: var(--font-weight-medium);
+  font-size: 0.8rem;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 0.875rem;
+}
+
+/* CARD COLORS */
+.card--purple {
+  background-color: var(--purple-500);
+}
+
+.card--grey500 {
+  background-color: var(--grey-500);
+}
+
+.card--white {
+  background-color: var(--white);
+}
+
+.card--dark-blue {
+  background-color: var(--dark-blue);
+}
+
+/* CARD TEXT COLORS PALLETE*/
+
+.pallete-1 {
+  color: var(--grey-100);
+}
+.pallete-2 {
+  color: var(--grey-500);
+}
+
+/* GRID SETTINGS  */
+.main_container {
+  display: grid;
+  justify-self: center;
+  gap: 1.25rem;
+  width: min(90%, 70rem);
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5";
+}
+
+.card-1 {
+  grid-area: card1;
+}
+
+.card-2 {
+  grid-area: card2;
+}
+
+.card-3 {
+  grid-area: card3;
+}
+
+.card-4 {
+  grid-area: card4;
+}
+
+.card-5 {
+  grid-area: card5;
+}
+
+@media (min-width: 481px) {
+  .main_container {
+    grid-template-areas:
+      "card1 card1"
+      "card2 card5"
+      "card3 card5"
+      "card4 card4";
+  }
+}
+
+/* Tablets and small laptops (769px - 1024px) */
+@media (min-width: 769px) {
+  .main_container {
+    grid-template-areas:
+      "card1 card1 card2 card5"
+      "card3 card4 card4 card5";
+  }
+}
